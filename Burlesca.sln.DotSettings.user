@@ -1,0 +1,7 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=CCA9BB7C_002DC10B_002D351C_002DBCDD_002D4C20DAE5C3F1_002Fdl_003ASource_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FProgram_0020Files_003FEpic_0020Games_003FUE_005F5_002E4_003FEngine_003FSource_002Fd_003AEditor_002Fd_003ABehaviorTreeEditor_002Fd_003APrivate_002Ff_003ABehaviorTreeEditor_002Ecpp/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">INFO</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">C:\Program Files\Epic Games\UE_5.4\Engine\Binaries\ThirdParty\DotNet\6.0.302\windows\sdk\6.0.302\MSBuild.dll</s:String>
+	<s:Int64 x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsbuildVersion/@EntryValue">1114112</s:Int64>
+	
+	</wpf:ResourceDictionary>

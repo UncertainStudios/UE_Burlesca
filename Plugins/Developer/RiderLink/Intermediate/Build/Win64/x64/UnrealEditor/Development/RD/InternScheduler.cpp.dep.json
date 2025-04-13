@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\intern\\internscheduler.cpp",
+        "Source": "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\intern\\internscheduler.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\rd\\definitions.h",
-            "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\intern\\internscheduler.h",
-            "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\scheduler\\base\\ischeduler.h",
+            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\rd\\definitions.h",
+            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\intern\\internscheduler.h",
+            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\scheduler\\base\\ischeduler.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\functional",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\vcruntime.h",
@@ -104,8 +104,8 @@
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\vcruntime_startup.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\xthreads.h",
             "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.43.34808\\include\\__msvc_threads_core.hpp",
-            "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\rd_framework_export.h",
-            "c:\\ueprojects\\burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\util\\guards.h"
+            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\rd_framework_export.h",
+            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_framework_cpp\\src\\main\\util\\guards.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

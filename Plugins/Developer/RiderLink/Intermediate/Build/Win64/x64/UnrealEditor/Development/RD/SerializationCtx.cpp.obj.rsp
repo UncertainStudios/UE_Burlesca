@@ -1,8 +1,8 @@
-"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization\SerializationCtx.cpp"
-/FI"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\Definitions.h"
-/Fo"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SerializationCtx.cpp.obj"
-/sourceDependencies "C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SerializationCtx.cpp.dep.json"
-@"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\RD.Shared.rsp"
+"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\serialization\SerializationCtx.cpp"
+/FI"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\Definitions.h"
+/Fo"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SerializationCtx.cpp.obj"
+/sourceDependencies "C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SerializationCtx.cpp.dep.json"
+@"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\RD.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

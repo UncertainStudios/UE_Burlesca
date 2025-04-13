@@ -1,8 +1,8 @@
-"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp"
-/FI"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Definitions.h"
-/Fo"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.obj"
-/sourceDependencies "C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.dep.json"
-@"C:\UEProjects\Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\RiderGameControl.Shared.rsp"
+"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp"
+/FI"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Definitions.h"
+/Fo"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.obj"
+/sourceDependencies "C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\Module.RiderGameControl.cpp.dep.json"
+@"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderGameControl\RiderGameControl.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

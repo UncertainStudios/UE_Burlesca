@@ -7,7 +7,7 @@
 #include "InteractionCaseController.generated.h"
 
 class UInteractionView;
-class UTP_BaseInteractableObject;
+class UTP_BaseInteractionComponent;
 class IInteractable;
 class AGameplayHUD;
 

@@ -4,13 +4,12 @@
 
 #include "BurlescaPlayerController.h"
 #include "EnhancedInputComponent.h"
-#include "MovieSceneTracksComponentTypes.h"
 #include "Camera/CameraComponent.h"
 #include "Components/WidgetInteractionComponent.h"
 #include "MainCharacter/MainCharacterAnimInstance.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharacterCameraController.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharMovementComponent.h"
-#include "MainCharacter/MainCharacterComponents/Interaction/TP_MainCharInteractionController.h"
+#include "MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.h"
 
 class ABurlescaPlayerController;
 

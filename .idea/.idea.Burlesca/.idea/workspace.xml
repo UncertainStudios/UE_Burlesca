@@ -12,84 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c28705ff-ef68-4d2a-8813-ec4f3d077f12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Furniture/Openable/BaseOpenable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Furniture/Openable/SingleLeafOpenable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Furniture/Openable/SingleLeafOpenable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Furniture/Openable/BaseOpenable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Burlesca/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Burlesca/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Audio/SFX/DEVELOPMENT/MS_PianoNote.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Audio/SFX/DEVELOPMENT/MS_PianoNote.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Audio/SFX/GuitarStrings/MS_GuitarString.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Audio/SFX/GuitarStrings/MS_GuitarString.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/InteractionComponents/BP_DoorBase.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/InteractionComponents/TP_DoorInteraction.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/InteractionComponents/TP_GuitarInteraction.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Main/BP_MainCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Main/BP_MainCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Main/BP_MobilePhone.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Main/BP_MobilePhone.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Scenes/LevelDesignScene.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Scenes/LevelDesignScene.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Scenes/TestScene.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Scenes/TestScene.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/ChatLogo1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/ChatLogo2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Close.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/CompanionChooseScreenBackfround.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/CompanionMessageBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__Строка_поиска_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__Шапка_чата_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__задник_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__задник_сообщений_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__кнопка_диалога_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Desktop/__чаты_пк.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Mobile/ChatScreenBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Mobile/ChatScreenHeader.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Mobile/ChatScreenSearch.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Mobile/DialogueOptionBtn.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/PlayerMessageBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/Return.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/StartDialogueQuote.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__Выбор чата.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__Крестик.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__Назад.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__Начало диалога.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__лого 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/ChatApp/__лого 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/CircleGray.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/CircleWhite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarDeckSprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg1Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg2Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg3Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg4Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg5Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPeg6Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted1Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted2Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted3Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted4Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted5Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarPegHighlighted6Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarSetupApplicationBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarSetupApplicationLogo.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarSetupIndicator.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/GuitarSetupApp/GuitarSetupIndicatorBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/Phone/phoneHomeScreenBackground.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sprites/UI/Phone/phoneHomeScreenBackground.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/BP_GameplayHUD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/PhoneApplicationsWidgets/WBP_ChatScreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/PhoneApplicationsWidgets/WBP_FLashlightScreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/PhoneApplicationsWidgets/WBP_GuitarTunerScreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/PhoneApplicationsWidgets/WBP_HomeScreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/PhoneApplicationsWidgets/WB_PhoneApplicationContainer.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_ApplicationIcon.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_ChatMessage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_CircularProgressBar.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_ConditionTooltip.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_DialogueCompanionButton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WB/WB_DialogueResponseButton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WBP_ComputerScreen.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WBP_InteractionView.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WBP_InteractionViewDepricated.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UserInterface/WBP_PauseMenuWidget.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Furniture/BP_BaseDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Furniture/BP_BaseDoor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/Developer/RiderLink/Intermediate/FileSystemMappings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/Developer/RiderLink/Intermediate/FileSystemMappings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/Interaction/BaseInteractableObject.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/Interaction/TP_MainCharInteractionController.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/BaseInteractableObject.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Furniture/BaseOpenable.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/Interaction/BaseInteractableComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/InteractableComponents/BaseInteractableComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/InvocationRegistry/InvocationInfo/ChangeObjectInteractionActivityStateDialogueInvocationInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/InvocationRegistry/InvocationInfo/ChangeObjectInteractionActivityStateDialogueInvocationInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Furniture/BaseOpenable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/BaseInteractableComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/InteractableComponents/BaseInteractableComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/Interactable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/InteractableComponents/Interactable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/Interaction/TP_MainCharInteractionController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,19 +52,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.Burlesca.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.Burlesca.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C++ Project.Burlesca">
     <configuration name="Burlesca" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -565,7 +504,7 @@
       <workItem from="1744407160258" duration="939000" />
       <workItem from="1744559495402" duration="1959000" />
       <workItem from="1744637298131" duration="5802000" />
-      <workItem from="1744712393457" duration="12887000" />
+      <workItem from="1744712393457" duration="21352000" />
     </task>
     <servers />
   </component>

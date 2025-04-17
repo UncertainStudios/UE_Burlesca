@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "DialogueInvocationInfo_Base.h"
-#include "MainCharacter/MainCharacterComponents/Interaction/Interactable.h"
+#include "InteractableComponents/Interactable.h"
 #include "UObject/Object.h"
 #include "ChangeObjectInteractionActivityStateDialogueInvocationInfo.generated.h"
 

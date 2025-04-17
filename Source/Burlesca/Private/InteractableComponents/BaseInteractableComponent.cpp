@@ -1,6 +1,6 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "MainCharacter/MainCharacterComponents/Interaction/BaseInteractableComponent.h"
+#include "InteractableComponents/BaseInteractableComponent.h"
 
 void UTP_BaseInteractableComponent::Inject_Implementation(UDependencyContainer* container)
 {

@@ -1,12 +1,12 @@
 // Copyright Uncertain Studios (c). All Rights Reserved.
 
 
-#include "MainCharacter/MainCharacterComponents/Interaction/TP_MainCharInteractionController.h"
+#include "MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Framework/SignalBus.h"
-#include "MainCharacter/MainCharacterComponents/Interaction/BaseInteractableComponent.h"
-#include "MainCharacter/MainCharacterComponents/Interaction/Interactable.h"
+#include "InteractableComponents/BaseInteractableComponent.h"
+#include "InteractableComponents/Interactable.h"
 #include "MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.h"
 
 UTP_MainCharInteractionController::UTP_MainCharInteractionController()

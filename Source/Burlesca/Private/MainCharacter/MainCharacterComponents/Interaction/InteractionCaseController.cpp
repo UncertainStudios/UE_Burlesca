@@ -3,7 +3,7 @@
 #include "MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.h"
 #include "HUD/GameplayHUD.h"
 #include "HUD/InteractionView.h"
-#include "MainCharacter/MainCharacterComponents/Interaction/Interactable.h"
+#include "InteractableComponents/Interactable.h"
 
 void UInteractionCaseController::Inject(UDependencyContainer* Container)
 {

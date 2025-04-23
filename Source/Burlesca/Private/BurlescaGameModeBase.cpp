@@ -2,7 +2,6 @@
 
 
 #include "BurlescaGameModeBase.h"
-
 #include "EngineUtils.h"
 #include "EnhancedInputComponent.h"
 #include "InputSetupable.h"
@@ -35,7 +34,7 @@ void ABurlescaGameModeBase::StartPlay()
 	UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(DiContainer->Resolve<APlayerController>()->InputComponent);
 	
 	for(TObjectIterator<UObject> obj; obj; ++obj )
-	{
+	{		
 		if (obj->GetWorld() == GetWorld())
 		{
 			if(obj->Implements<UInject>())

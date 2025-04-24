@@ -5,8 +5,10 @@
 #include "ConditionsRegistry/Conditions/GuitarSetupCondition.h"
 #include "Dialogue/DialogueSystemManager.h"
 
-void UConditionRegistry::Inject(UDependencyContainer* Container)
+void UConditionRegistry::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
+
 	UGuitarSetupCondition* guitarSetupResponseCondition = NewObject<UGuitarSetupCondition>(this);
 	guitarSetupResponseCondition->InitDependenciesFromDIContainer(Container);
 	Conditions.Add(EConditionType::IsGuitarSetUp, guitarSetupResponseCondition);

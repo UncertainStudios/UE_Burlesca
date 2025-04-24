@@ -4,8 +4,10 @@
 
 DEFINE_LOG_CATEGORY(DialogueGraphRuntime)
 
-void UDialogueSystemManager::Inject(UDependencyContainer* Container)
+void UDialogueSystemManager::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
+
 	MobilePhone = Container->Resolve<AMobilePhone>();
 	ConditionRegistry = Container->Resolve<UConditionRegistry>();
 }

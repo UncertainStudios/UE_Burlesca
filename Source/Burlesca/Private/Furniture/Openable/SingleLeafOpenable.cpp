@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "SingleLeafOpenable.h"
+#include "Furniture/Openable/SingleLeafOpenable.h"
 
 
 // Sets default values

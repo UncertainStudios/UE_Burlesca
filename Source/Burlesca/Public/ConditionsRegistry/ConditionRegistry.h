@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "ConditionParams.h"
 #include "ConditionType.h"
-#include "Framework/DependencyInjection/Inject.h"
+#include "Tween/Tween.h"
 #include "UObject/Object.h"
 #include "ConditionRegistry.generated.h"
 
@@ -13,13 +13,13 @@
  * 
  */
 UCLASS()
-class BURLESCA_API UConditionRegistry : public UObject, public IInject
+class BURLESCA_API UConditionRegistry : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 
 public:
-	void virtual Inject(UDependencyContainer* Container) override;
-	bool CheckCondition(EConditionType conditionType, FConditionParams params);
+	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
+	bool CheckCondition(EConditionType conditionType, FConditionParams params) {UTween* tween; tween->bAutoKill; tween->SetAutoKill(false)->Stop();}
 	
 	UPROPERTY()
 	TMap<EConditionType, UObject*> Conditions;

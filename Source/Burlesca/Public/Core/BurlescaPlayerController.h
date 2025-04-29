@@ -7,17 +7,14 @@
 #include "BurlescaPlayerController.generated.h"
 
 class AGameplayHUD;
-class USignalBus;
-/**
- * 
- */
+
 UCLASS()
 class BURLESCA_API ABurlescaPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
 public:
-	void Init(USignalBus* signalBus);
+	void Init();
 	void PauseGame();
 	void UnpauseGame();
 
@@ -28,7 +25,4 @@ public:
 
 protected:
 	bool bIsGamePaused;
-
-	UPROPERTY()
-	USignalBus* SignalBus;
 };

@@ -8,7 +8,7 @@
 
 UMobilePhoneController::UMobilePhoneController()
 {
-	PhoneSituation = EPhoneSituation::InPocket;
+	PhoneSituation = EPhoneState::InPocket;
 }
 
 void UMobilePhoneController::Init()
@@ -56,12 +56,12 @@ void UMobilePhoneController::ChoosePhoneTakeOrPut()
 	{
 		switch(PhoneSituation)
 		{
-		case EPhoneSituation::InPocket:
+		case EPhoneState::InPocket:
 			bCanChangePhoneSituation = false;
 			TakePhoneInHands();
 			break;
 				
-		case EPhoneSituation::InHands:
+		case EPhoneState::InHands:
 			bCanChangePhoneSituation = false;
 			PutPhoneInPocket();
 			break;
@@ -78,14 +78,14 @@ void UMobilePhoneController::PutPhoneInPocket()
 
 void UMobilePhoneController::OnPhonePickedUpFromPocket()
 {
-	PhoneSituation = EPhoneSituation::InHands;
+	PhoneSituation = EPhoneState::InHands;
 	PowerPhoneOn();
 	ResetCanChangePhoneSituation();
 }
 
 void UMobilePhoneController::OnPhonePutDownToPocket()
 {
-	PhoneSituation = EPhoneSituation::InPocket;
+	PhoneSituation = EPhoneState::InPocket;
 	ResetCanChangePhoneSituation();
 }
 
@@ -113,11 +113,11 @@ void UMobilePhoneController::SwitchPhoneVisibility()
 {
 	switch (PhoneSituation)
 	{
-		case EPhoneSituation::InHands:
+		case EPhoneState::InHands:
 			MobilePhone->SetVisibility(true);
 		break;
 		
-		case EPhoneSituation::InPocket:
+		case EPhoneState::InPocket:
 			MobilePhone->SetVisibility(false);
 		break;
 	}
@@ -125,7 +125,7 @@ void UMobilePhoneController::SwitchPhoneVisibility()
 
 void UMobilePhoneController::OnPhoneFocusStateChangeCalled()
 {
-	if(PhoneSituation == EPhoneSituation::InHands && bCanChangePhoneFocusState && bCanChangePhoneSituation)
+	if(PhoneSituation == EPhoneState::InHands && bCanChangePhoneFocusState && bCanChangePhoneSituation)
 	{
 		switch(bIsPhoneFocused)
 		{

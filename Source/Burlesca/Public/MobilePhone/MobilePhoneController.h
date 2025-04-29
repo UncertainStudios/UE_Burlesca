@@ -3,13 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BurlescaPlayerController.h"
 #include "MainCharacter/MainCharacterAnimInstance.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "UObject/Object.h"
 #include "MobilePhoneController.generated.h"
 
-enum class EPhoneSituation : uint8;
+enum class EPhoneState : uint8;
 enum class EPhoneApplication : uint8;
 class UMainCharacterAnimInstance;
 class AMainCharacter;
@@ -57,7 +55,7 @@ protected:
 	UFUNCTION()
 	void SwitchPhoneVisibility();
 	
-	EPhoneSituation PhoneSituation;
+	EPhoneState PhoneSituation;
 	bool bCanChangePhoneSituation = true;
 	
 	/*  ---  Phone Take In Hands  ---  */

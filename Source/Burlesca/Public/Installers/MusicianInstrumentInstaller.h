@@ -2,11 +2,7 @@
 
 #pragma once
 
-#include <InputSetupable.h>
-
 #include "CoreMinimal.h"
-#include "Components/AudioComponent.h"
-#include "Framework/DependencyInjection/InjectionInstaller.h"
 #include "MusicianInstrumentInstaller.generated.h"
 
 class UTP_GuitarPeg;
@@ -15,21 +11,16 @@ class UGuitarTuningController;
 class APointLight;
 class UInstrumentController;
 
-UCLASS()
-class BURLESCA_API AMusicianInstrumentInstaller : public AInjectionInstaller, public IInputSetupable
+/*UCLASS()
+class BURLESCA_API AMusicianInstrumentInstaller
 {
 	GENERATED_BODY()
-
-public:
-	virtual void InstallBindings(UDependencyContainer* Container) override;
-	virtual void SetupInput(UEnhancedInputComponent* EnhancedInputComponent) override;
-
-protected:
+	
 	UPROPERTY()
-	UGuitarTuningController* GuitarSetupController;
+	UGuitarTuningController* GuitarSetupController;*/
 	
 	/*  ---  Guitar  ---  */
-	UPROPERTY(EditAnywhere, Category="Setup|Guitar Input")
+	/*UPROPERTY(EditAnywhere, Category="Setup|Guitar Input")
 	UInputAction* SwitchPegAction;
 
 	UPROPERTY(EditAnywhere, Category="Setup|Guitar Input")
@@ -59,4 +50,5 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Setup|Guitar Setup|Audio")
 	TArray<USoundBase*> StringSounds;
 	
-};
+}
+*/

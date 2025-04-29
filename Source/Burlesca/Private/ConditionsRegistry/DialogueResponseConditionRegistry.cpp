@@ -1,17 +1,27 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "ConditionsRegistry/ConditionAssetConfig.h"
 #include "ConditionsRegistry/ConditionRegistry.h"
+#include "ConditionsRegistry/ConditionSetAsset.h"
 #include "ConditionsRegistry/Conditions/GuitarSetupCondition.h"
 #include "Dialogue/DialogueSystemManager.h"
+#include "Framework/BurlescaWorldSettings.h"
 
 void UConditionRegistry::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
-	UGuitarSetupCondition* guitarSetupResponseCondition = NewObject<UGuitarSetupCondition>(this);
+	FConditionAssetConfig& config = Cast<ABurlescaWorldSettings>(GetWorld()->GetWorldSettings())->ConditionSetAsset->Config;
+
+	/*if(config.bEnable_HasItem)
+	{
+		
+	}*/
+	
+	/*UGuitarSetupCondition* guitarSetupResponseCondition = NewObject<UGuitarSetupCondition>(this);
 	guitarSetupResponseCondition->InitDependenciesFromDIContainer(Container);
-	Conditions.Add(EConditionType::IsGuitarSetUp, guitarSetupResponseCondition);
+	Conditions.Add(EConditionType::IsGuitarSetUp, guitarSetupResponseCondition);*/
 }
 
 bool UConditionRegistry::CheckCondition(EConditionType conditionType, FConditionParams params)

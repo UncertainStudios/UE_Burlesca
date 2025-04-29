@@ -1,18 +1,14 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BurlescaPlayerController.h"
+#include "Core/BurlescaPlayerController.h"
 
-#include "Framework/SignalBus.h"
-
-void ABurlescaPlayerController::Init(USignalBus* signalBus)
+void ABurlescaPlayerController::Init()
 {
-	SignalBus = signalBus;
 }
 
 void ABurlescaPlayerController::PauseGame()
 {
-	SignalBus->GetGlobalGameEventsContainer()->OnGamePaused.Broadcast();
 	bIsGamePaused = true;
 	ShowCursor();
 	
@@ -21,7 +17,6 @@ void ABurlescaPlayerController::PauseGame()
 
 void ABurlescaPlayerController::UnpauseGame()
 {
-	SignalBus->GetGlobalGameEventsContainer()->OnGameUnpaused.Broadcast();
 	bIsGamePaused = false;
 
 	HideCursor();

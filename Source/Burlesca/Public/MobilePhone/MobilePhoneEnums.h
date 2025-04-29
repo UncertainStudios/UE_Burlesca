@@ -21,9 +21,7 @@ enum class EPhoneApplication : uint8
 };
 
 UENUM()
-enum class EPhoneSituation : uint8
+enum class EPhoneState : uint8
 {
-	InPocket,
-	InHands,
-	InWorld
+	Hidden
 };

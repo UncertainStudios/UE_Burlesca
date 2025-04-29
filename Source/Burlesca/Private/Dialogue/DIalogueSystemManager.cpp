@@ -1,5 +1,6 @@
 ﻿#include "Dialogue/DialogueSystemManager.h"
 #include "Dialogue/DialoguePlayer.h"
+#include "Framework/BurlescaWorldSettings.h"
 #include "MobilePhone/MobilePhone.h"
 
 DEFINE_LOG_CATEGORY(DialogueGraphRuntime)
@@ -7,9 +8,11 @@ DEFINE_LOG_CATEGORY(DialogueGraphRuntime)
 void UDialogueSystemManager::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-
-	MobilePhone = Container->Resolve<AMobilePhone>();
-	ConditionRegistry = Container->Resolve<UConditionRegistry>();
+	
+	ConditionRegistry = Collection.InitializeDependency<UConditionRegistry>();
+	DialoguePlayer = NewObject<UDialoguePlayer>(this);
+	DialoguePlayer->ProvideDialoguesAssets(Cast<ABurlescaWorldSettings>(GetWorld()->GetWorldSettings())->WorldDialogues);
+	//MobilePhone = Container->Resolve<AMobilePhone>();
 }
 
 void UDialogueSystemManager::Init(UDialoguePlayer* dialoguePlayer)

@@ -19,7 +19,7 @@ class BURLESCA_API UConditionRegistry : public UGameInstanceSubsystem
 
 public:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
-	bool CheckCondition(EConditionType conditionType, FConditionParams params) {UTween* tween; tween->bAutoKill; tween->SetAutoKill(false)->Stop();}
+	bool CheckCondition(EConditionType conditionType, FConditionParams params);
 	
 	UPROPERTY()
 	TMap<EConditionType, UObject*> Conditions;

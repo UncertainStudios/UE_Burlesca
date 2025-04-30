@@ -46,14 +46,22 @@ void AMainCharacter::ComponentsConstruction()
 	CharacterMesh->bCastDynamicShadow = false;
 	CharacterMesh->CastShadow = false;
 
-	CameraController = CreateDefaultSubobject<UTP_MainCharacterCameraController>(TEXT("Camera Movement Controller"));
-	MovementController = CreateDefaultSubobject<UTP_MainCharMovementComponent>(TEXT("Player Movement Controller"));
-	InteractionController = CreateDefaultSubobject<UTP_MainCharInteractionController>(TEXT("Interaction Controller"));
+	CameraComponent = CreateDefaultSubobject<UTP_MainCharacterCameraController>(TEXT("Camera Movement Controller"));
+	MovementComponent = CreateDefaultSubobject<UTP_MainCharMovementComponent>(TEXT("Player Movement Controller"));
+	InteractionComponent = CreateDefaultSubobject<UTP_MainCharInteractionController>(TEXT("Interaction Controller"));
 	
-	check(CameraController);
-	check(MovementController);
-	check(InteractionController);
+	check(CameraComponent);
+	check(MovementComponent);
+	check(InteractionComponent);
 	check(WidgetInteraction);
+}
+
+void AMainCharacter::ComponentsInitialization()
+{
+	//MainCamera->AttachToComponent(CharacterMesh, FAttachmentTransformRules::KeepWorldTransform, TEXT("camera_socket"));
+	InteractionComponent->Init(MainCamera);
+	MovementComponent->Init();
+	CameraComponent->Init(MainCamera);
 }
 
 void AMainCharacter::MousePressed()
@@ -68,26 +76,18 @@ void AMainCharacter::MouseReleased()
 		WidgetInteraction->ReleasePointerKey(EKeys::LeftMouseButton);
 }
 
-void AMainCharacter::ComponentsInitialization()
-{
-	//MainCamera->AttachToComponent(CharacterMesh, FAttachmentTransformRules::KeepWorldTransform, TEXT("camera_socket"));
-	InteractionController->Init(MainCamera);
-	MovementController->Init();
-	CameraController->Init(MainCamera);
-}
-
 void AMainCharacter::PlayAllPlayerServicies()
 {
-	InteractionController->PlayService();
-	MovementController->PlayService();
-	CameraController->PlayService();
+	InteractionComponent->PlayService();
+	MovementComponent->PlayService();
+	CameraComponent->PlayService();
 }
 
 void AMainCharacter::StopAllPlayerServicies()
 {
-	InteractionController->StopService();
-	MovementController->StopService();
-	CameraController->StopService();
+	InteractionComponent->StopService();
+	MovementComponent->StopService();
+	CameraComponent->StopService();
 }
 
 UMainCharacterAnimInstance* AMainCharacter::CreateAnimInstance(UClass* AnimInstanceClass)

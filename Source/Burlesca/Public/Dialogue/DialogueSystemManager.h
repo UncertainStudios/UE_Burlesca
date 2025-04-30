@@ -43,7 +43,7 @@ protected:
 	UDialoguePlayer* DialoguePlayer = nullptr;
 
 	UPROPERTY()
-	AMobilePhone* MobilePhone = nullptr;
+	UMobilePhone* MobilePhone = nullptr;
 	
 	UPROPERTY()
 	UChatScreen* ChatScreen = nullptr;

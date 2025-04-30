@@ -33,3 +33,8 @@ void UMainCharacterAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		bIsCharacterMoving = true;
 	}
 }
+
+void UMainCharacterAnimInstance::SetPhoneAnimState(EPhoneAnimState AnimState)
+{
+	
+}

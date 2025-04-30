@@ -2,6 +2,8 @@
 
 
 #include "MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h"
+
+#include "MobilePhone/MobilePhoneEnums.h"
 #include "MobilePhone/ApplicationWidgets/Chat/ChatScreen.h"
 #include "MobilePhone/ApplicationWidgets/Home/HomeScreen.h"
 #include "MobilePhone/ApplicationWidgets/Flashlight/FlashlightScreen.h"
@@ -30,7 +32,9 @@ void UPhoneApplicationContainer::OpenApplication(EPhoneApplication application)
 {
 	OpenedPhoneApplication = application;
 	UPhoneApplication* appWidget = ApplicationEnumToWidgetMap[OpenedPhoneApplication];
-	HomeScreenWidget->CloseApplication();
+	if(application != EPhoneApplication::HomePage)
+		HomeScreenWidget->CloseApplication();
+
 	appWidget->OpenApplication();
 	appWidget->ActivateApplication();
 }
@@ -50,19 +54,4 @@ UPhoneApplication* UPhoneApplicationContainer::GetCurrentOpenedApplication()
 UPhoneApplication* UPhoneApplicationContainer::GetApplicationWidget(EPhoneApplication app)
 {
 	return ApplicationEnumToWidgetMap[app];
-}
-
-void UPhoneApplicationContainer::ActivateCurrentApplication()
-{
-	ApplicationEnumToWidgetMap[OpenedPhoneApplication]->ActivateApplication();
-}
-
-void UPhoneApplicationContainer::DeactivateCurrentApplication()
-{
-	ApplicationEnumToWidgetMap[OpenedPhoneApplication]->DeactivateApplication();
-}
-
-void UPhoneApplicationContainer::SetContainerVisibility(ESlateVisibility visibility)
-{
-	SetVisibility(visibility);
 }

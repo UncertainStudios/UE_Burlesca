@@ -10,20 +10,19 @@
 #include "Components/VerticalBox.h"
 #include "Dialogue/DialogueCompanion.h"
 #include "Dialogue/DialogueMessage.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "MobilePhone/ApplicationWidgets/PhoneApplication.h"
 #include "NodeInfo/DialogueGraphResponseNodeInfo.h"
 #include "ChatScreen.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCompanionSelected, EDialogueCompanion, companion);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNotificationRecivecedEvent, EPhoneApplication, app);
 
 UCLASS(Blueprintable)
-class BURLESCA_API UChatScreen : public UPhoneApplication, public IInject, public IInputSetupable
+class BURLESCA_API UChatScreen : public UPhoneApplication, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* InputComponent) override;
 	void NativeConstruct() override;
 	virtual void CloseApplication() override;
@@ -37,9 +36,15 @@ public:
 	bool GetIsDialogueWindowShown() { return bIsDialogueWindowShown; }
 	void ShowRequest(TArray<UDialogueGraphResponseNodeInfo*> info);
 	void ClearRequest();
-	
+
+	UPROPERTY(BlueprintAssignable)
 	FOnCompanionSelected OnCompanionSelected;
+
+	UPROPERTY(BlueprintAssignable)
 	FOnResponseSelected OnResponseSelected;
+
+	UPROPERTY(BlueprintAssignable)
+	FOnNotificationRecivecedEvent OnNotificationRecived;
 	
 protected:
 	UFUNCTION()

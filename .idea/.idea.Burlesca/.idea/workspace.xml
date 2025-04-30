@@ -12,32 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c28705ff-ef68-4d2a-8813-ec4f3d077f12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/PhoneUIManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/PhoneUIManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/Animation/AnimNotifies/AnimNotify_TogglePhonePowerState.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/Animation/AnimNotifies/AnimNotify_TogglePhoneVisibility.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/Animation/AnimNotifies/AnimNotify_TogglePhonePowerState.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/Animation/AnimNotifies/AnimNotify_TogglePhoneVisibility.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Burlesca/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Burlesca/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Resources/FriendDialogue.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Resources/PayerDialogue.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/ConditionsRegistry/DialogueResponseConditionRegistry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/ConditionsRegistry/DialogueResponseConditionRegistry.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Core/BurlescaPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Core/BurlescaPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Dialogue/DIalogueSystemManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Dialogue/DIalogueSystemManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/DialogueInstaller.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/HUDInstaller.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/MainCharacterInstaller.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/MainSceneInstaller.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/MusicianInstrumentInstaller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/Installers/MusicianInstrumentInstaller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterAnimInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MainCharacter/MainCharacterAnimInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/ApplicationWidgets/Chat/ChatScreen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/ApplicationWidgets/Chat/ChatScreen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/ApplicationWidgets/PhoneApplicationContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/ApplicationWidgets/PhoneApplicationContainer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/MobilePhone.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/MobilePhone.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/MobilePhoneController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Private/MobilePhone/MobilePhoneController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/ConditionsRegistry/ConditionRegistry.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/ConditionsRegistry/ConditionRegistry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Core/BurlescaPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Core/BurlescaPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/DialoguePlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/DialoguePlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Framework/BurlescaWorldSettings.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Core/BurlescaWorldSettings.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Framework/EscapeButtonController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Framework/SignalBus.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/DialogueInstaller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/HUDInstaller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/MainCharacterInstaller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/MainSceneInstaller.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/MusicianInstrumentInstaller.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Installers/MusicianInstrumentInstaller.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/DialogueSystemManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/Dialogue/DialogueSystemManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/MainCharacterAnimInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MainCharacter/Animation/MainCharacterAnimInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/ApplicationWidgets/Chat/ChatScreen.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/ApplicationWidgets/Chat/ChatScreen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhone.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhone.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhoneController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhoneController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhoneEnums.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Burlesca/Public/MobilePhone/MobilePhoneEnums.h" afterDir="false" />
@@ -54,6 +45,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Animation/AnimBlueprint.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Animation/AnimNotifies/AnimNotify_PlayParticleEffect.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/AnimBlueprint.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Public/Subsystems/Subsystem.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/UMG/Public/Components/Button.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -518,7 +512,7 @@
       <workItem from="1744559495402" duration="1959000" />
       <workItem from="1744637298131" duration="5802000" />
       <workItem from="1744712393457" duration="21352000" />
-      <workItem from="1745485797626" duration="14708000" />
+      <workItem from="1745485797626" duration="25582000" />
     </task>
     <servers />
   </component>

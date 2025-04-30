@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "InputSetupable.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+class UMobilePhone;
 class UInputAction;
 class UMainCharacterAnimInstance;
 class UTP_MainCharInteractionController;
@@ -17,13 +17,12 @@ class UWidgetInteractionComponent;
 class UCameraComponent;
 
 UCLASS()
-class BURLESCA_API AMainCharacter : public ACharacter, public IInject, public IInputSetupable
+class BURLESCA_API AMainCharacter : public ACharacter, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:
 	AMainCharacter();
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* input) override;
 	void ComponentsInitialization();
 	
@@ -34,14 +33,17 @@ public:
 	virtual void PlayAllPlayerServicies();
 
 	UFUNCTION(BlueprintCallable)
-	virtual UTP_MainCharMovementComponent* GetCharacterMovementComponent() { return MovementController; }
+	virtual UTP_MainCharMovementComponent* GetCharacterMovementComponent() { return MovementComponent; }
 
 	UFUNCTION(BlueprintCallable)
-	virtual UTP_MainCharacterCameraController* GetCharacterCameraComponent() { return CameraController; }
+	virtual UTP_MainCharacterCameraController* GetCharacterCameraComponent() { return CameraComponent; }
 
 	UFUNCTION(BlueprintCallable)
-	virtual UTP_MainCharInteractionController* GetCharacterInteractionComponent()  { return InteractionController; }
+	virtual UTP_MainCharInteractionController* GetCharacterInteractionComponent()  { return InteractionComponent; }
 
+	UFUNCTION(BlueprintCallable)
+	virtual UMobilePhone* GetPhoneComponent()  { return PhoneComponent; }
+	
 	UFUNCTION()
 	UMainCharacterAnimInstance* CreateAnimInstance(UClass* AnimInstanceClass);
 
@@ -54,24 +56,24 @@ protected:
 	void MousePressed(); 
 	void MouseReleased();
 	
-	UPROPERTY(EditAnywhere, Category = CameraController)
-	UCameraComponent* MainCamera;
-
-	UPROPERTY(EditAnywhere, Category = WidgetInteraction)
+	UPROPERTY(EditAnywhere, Category="Components|CameraComponent")
 	UWidgetInteractionComponent* WidgetInteraction;
 
-	UPROPERTY(EditAnywhere, Category = Mesh)
+	UPROPERTY(EditAnywhere, Category="Components|SKMeshComponent")
 	USkeletalMeshComponent* CharacterMesh;
 
-	UPROPERTY(EditAnywhere, Category = CameraController)
-	UTP_MainCharacterCameraController* CameraController;
+	UPROPERTY(EditAnywhere, Category="Components|CameraComponent")
+	UTP_MainCharacterCameraController* CameraComponent;
 
-	UPROPERTY(EditAnywhere, Category = MovementController)
-	UTP_MainCharMovementComponent* MovementController;
+	UPROPERTY(EditAnywhere, Category ="Components|MovementComponent")
+	UTP_MainCharMovementComponent* MovementComponent;
 
-	UPROPERTY(EditAnywhere, Category = MovementController)
-	UTP_MainCharInteractionController* InteractionController;
+	UPROPERTY(EditAnywhere, Category="Components|InteractionComponent")
+	UTP_MainCharInteractionController* InteractionComponent;
 
+	UPROPERTY(EditAnywhere, Category="Components|PhoneComponent")
+	UMobilePhone* PhoneComponent;
+	
 	UPROPERTY(EditAnywhere, Category = WidgetInteraction)
 	UInputAction* MousePressedInputAction;
 

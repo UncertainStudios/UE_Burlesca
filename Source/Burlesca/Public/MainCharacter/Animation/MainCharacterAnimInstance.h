@@ -4,29 +4,26 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "MobilePhone/MobilePhoneEnums.h"
 #include "MainCharacterAnimInstance.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPhoneIsInHands);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPhoneIsInPocket);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPhoneFocusStateChanged, bool, bIsFocused);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHandIsOutOfFOV);
+// DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPhoneIsInHands);
+// DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPhoneIsInPocket);
+// DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPhoneFocusStateChanged, bool, bIsFocused);
+// DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnHandIsOutOfFOV);
 
 UENUM(Blueprintable)
-enum class EPhoneAnimation : uint8
+enum class EPhoneAnimState : uint8
 {
 	None,
-	PickUpFromPocket,
-	PutDownInPocket,
-	Focus,
-	Unfocus,
-	PutPhoneInWorld
+	PickUp_Pocket,
+	PullOut,
+	PickUp_Place,
+	PutDown_Place,
 };
 
-class USignalBus;
 class AMainCharacter;
-/**
- * 
- */
+
 UCLASS()
 class BURLESCA_API UMainCharacterAnimInstance : public UAnimInstance
 {
@@ -36,20 +33,8 @@ public:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 	
-	UFUNCTION(BlueprintImplementableEvent)
-	void PlayPhoneAnimation(EPhoneAnimation AnimType);
-
-	UPROPERTY(BlueprintCallable)
-	FOnPhoneIsInHands OnPhoneIsInHands;
-
-	UPROPERTY(BlueprintCallable)
-	FOnPhoneIsInPocket OnPhoneIsInPocket;
-
-	UPROPERTY(BlueprintCallable)
-	FOnPhoneFocusStateChanged OnPhoneFocusStateChanged;
-
-	UPROPERTY(BlueprintCallable)
-	FOnHandIsOutOfFOV OnHandIsOutOfFOV;
+	UFUNCTION()
+	void SetPhoneAnimState(EPhoneAnimState AnimState);
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	AMainCharacter* MainCharacter;
@@ -65,4 +50,10 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite)
 	float RightArmAnimationWeight;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool bCanChangePhoneState = true;
+
+	UPROPERTY(BlueprintReadWrite)
+	EPhoneState PhoneState = EPhoneState::Placed;
 };

@@ -23,5 +23,8 @@ enum class EPhoneApplication : uint8
 UENUM()
 enum class EPhoneState : uint8
 {
-	Hidden
+	Hidden,
+	Pulled,
+	Focused,
+	Placed
 };

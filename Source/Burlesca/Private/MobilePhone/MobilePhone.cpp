@@ -2,59 +2,79 @@
 
 
 #include "MobilePhone/MobilePhone.h"
+
+#include "EnhancedInputComponent.h"
 #include "Components/AudioComponent.h"
 #include "Components/WidgetComponent.h"
+#include "Core/BurlescaPlayerController.h"
+#include "Kismet/GameplayStatics.h"
+#include "MainCharacter/MainCharacter.h"
+#include "MainCharacter/MainCharacterAnimInstance.h"
 #include "MobilePhone/MobilePhoneEnums.h"
 #include "MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h"
 #include "MobilePhone/ApplicationWidgets/Chat/ChatScreen.h"
 
-AMobilePhone::AMobilePhone()
+UMobilePhone::UMobilePhone()
 {
-	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
+	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>("PhoneMesh");
 	StaticMesh->SetSimulatePhysics(false);
 	StaticMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	StaticMesh->CastShadow = false;
-	SetRootComponent(StaticMesh);
+	StaticMesh->SetupAttachment(this);
 
 	AudioComponent = CreateDefaultSubobject<UAudioComponent>("AudioSource");
-	AudioComponent->SetupAttachment(RootComponent);
+	AudioComponent->SetupAttachment(this);
 	
 	MobilePhoneScreenWidgetComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("Mobile Screen Widget"));
-	MobilePhoneScreenWidgetComponent->SetupAttachment(RootComponent);
+	MobilePhoneScreenWidgetComponent->SetupAttachment(this);
 	MobilePhoneScreenWidgetComponent->SetWidgetSpace(EWidgetSpace::World);
 }
 
-void AMobilePhone::Init()
+void UMobilePhone::Init()
 {
+	Owner = Cast<AMainCharacter>(GetOwner());
+	PlayerController = Cast<ABurlescaPlayerController>(Owner->GetController());
+	
 	AudioComponent->SetSound(NotificationSound);
 	ApplicationsContainer = Cast<UPhoneApplicationContainer>(CreateWidget(GetWorld(), ApplicationsContainerClass));
 	MobilePhoneScreenWidgetComponent->SetWidget(ApplicationsContainer);
-	ApplicationsContainer->SetContainerVisibility(ESlateVisibility::Collapsed);
+	ApplicationsContainer->SetVisibility(ESlateVisibility::Collapsed);
+
+	Cast<UEnhancedInputComponent>(PlayerController->InputComponent)->BindAction(FocusPhoneAction, ETriggerEvent::Triggered, this, &OnFocusPhoneTriggered);
+	Cast<UEnhancedInputComponent>(PlayerController->InputComponent)->BindAction(PullPhoneAction, ETriggerEvent::Triggered, this, &OnPullPhoneTriggered);
 }
 
-void AMobilePhone::SetPowerState(bool bPowerOn) const
+void UMobilePhone::TogglePower() const
 {
-	ESlateVisibility visibility = bPowerOn ? ESlateVisibility::Visible : ESlateVisibility::Hidden;
-	ApplicationsContainer->SetContainerVisibility(visibility);
+	TogglePower(ApplicationsContainer->GetVisibility() == ESlateVisibility::Collapsed);
 }
 
-void AMobilePhone::SetVisibility(bool bIsVisible) const
+void UMobilePhone::ToggleVisibility() const
+{
+	ToggleVisibility(!StaticMesh->IsVisible());
+}
+
+void UMobilePhone::TogglePower(bool bPowerOn) const
+{
+	if(bPowerOn)
+		ApplicationsContainer->OpenApplication(EPhoneApplication::HomePage);
+	
+	ESlateVisibility visibility = bPowerOn ? ESlateVisibility::Visible : ESlateVisibility::Hidden;
+	ApplicationsContainer->SetVisibility(visibility);
+}
+
+void UMobilePhone::ToggleVisibility(bool bIsVisible) const
 {
 	StaticMesh->SetVisibility(bIsVisible);
 	MobilePhoneScreenWidgetComponent->SetVisibility(bIsVisible);
 }
 
-void AMobilePhone::OnPhoneFocused()
+void UMobilePhone::OnFocusPhoneTriggered()
 {
-	ApplicationsContainer->ActivateCurrentApplication();
+	AnimInstance->SetPhoneAnimState(EPhoneAnimState::PickUp_Pocket);
 }
 
-void AMobilePhone::OnPhoneUnfocused()
+void UMobilePhone::OnPullPhoneTriggered()
 {
-	ApplicationsContainer->DeactivateCurrentApplication();
-}
-
-UPhoneApplication* AMobilePhone::GetApp(EPhoneApplication app)
-{
-	return ApplicationsContainer->GetApplicationWidget(app);
+	AnimInstance->SetPhoneAnimState(EPhoneAnimState::PullOut);
 }

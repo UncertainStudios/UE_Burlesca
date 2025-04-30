@@ -5,10 +5,6 @@
 #include "Components/Spacer.h"
 #include "Dialogue/DialogueSystemManager.h"
 
-void UChatScreen::Inject(UDependencyContainer* Container)
-{
-}
-
 auto UChatScreen::SetupInput(UEnhancedInputComponent* input) -> void
 {
 	Super::SetupInput(input);

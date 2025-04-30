@@ -11,9 +11,7 @@ class UGuitarTunerScreen;
 class UFlashlightScreen;
 class UChatScreen;
 class UHomeScreen;
-/**
- * 
- */
+
 UCLASS()
 class BURLESCA_API UPhoneApplicationContainer : public UUserWidget
 {
@@ -22,17 +20,16 @@ class BURLESCA_API UPhoneApplicationContainer : public UUserWidget
 public:
 	virtual void NativeConstruct() override;
 
-	void SetContainerVisibility(ESlateVisibility visibility);
-	
+	UFUNCTION(BlueprintCallable)	
 	UPhoneApplication* GetCurrentOpenedApplication();
+	
+	UFUNCTION(BlueprintCallable)
 	UPhoneApplication* GetApplicationWidget(EPhoneApplication app);
-	void ActivateCurrentApplication();
-	void DeactivateCurrentApplication();
+
+	UFUNCTION(BlueprintCallable)
+	void OpenApplication(EPhoneApplication application);
 	
 protected:
-	UFUNCTION()
-	void OpenApplication(EPhoneApplication application);
-
 	UFUNCTION()
 	void OnApplicationClosed();
 	

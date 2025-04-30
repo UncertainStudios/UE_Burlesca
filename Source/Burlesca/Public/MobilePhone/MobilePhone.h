@@ -3,56 +3,70 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "InputSetupable.h"
-#include "MobilePhoneEnums.h"
-#include "ApplicationWidgets/PhoneApplication.h"
 #include "Components/AudioComponent.h"
-#include "GameFramework/Actor.h"
 #include "MobilePhone.generated.h"
 
+class UMainCharacterAnimInstance;
+class UInputAction;
+class ABurlescaPlayerController;
+class AMainCharacter;
 class UPhoneApplicationContainer;
-enum class EPhoneApplication : uint8;
 class UWidgetComponent;
+enum class EPhoneApplication : uint8;
+class UPhoneApplication;
 
 UCLASS()
-class BURLESCA_API AMobilePhone : public AActor
+class BURLESCA_API UMobilePhone : public USceneComponent
 {
 	GENERATED_BODY()
 
 public:
-	AMobilePhone();
 	void Init();
-	
-	UFUNCTION()
-	void SetPowerState(bool bPowerOn) const;
-
-	UFUNCTION()
-	void SetVisibility(bool bIsVisible) const;
-	
-	void OnPhoneFocused();
-	void OnPhoneUnfocused();
-	UPhoneApplication* GetApp(EPhoneApplication app);
-	
-	void PlayNotificationSound() const { AudioComponent->Play();  }
+	void TogglePower() const;
+	void TogglePower(bool bPowerOn) const;
+	void ToggleVisibility() const;
+	void ToggleVisibility(bool bIsVisible) const;
 	
 protected:
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, Category="Components")
 	UStaticMeshComponent* StaticMesh;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly, Category="Components")
+	UWidgetComponent* MobilePhoneScreenWidgetComponent;
+	
+	UPROPERTY(EditDefaultsOnly, Category="Components")
+	UAudioComponent* AudioComponent;
+	
+	UPROPERTY(EditDefaultsOnly, Category="Audio")
+	USoundWave* NotificationSound;
+	
+	UPROPERTY(EditDefaultsOnly, Category="UI")
 	TSubclassOf<UPhoneApplicationContainer> ApplicationsContainerClass;
+
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	UInputAction* FocusPhoneAction;
+
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	UInputAction* PullPhoneAction;
 	
 	UPROPERTY()
 	UPhoneApplicationContainer* ApplicationsContainer;
-	
-	UPROPERTY(EditAnywhere)
-	UWidgetComponent* MobilePhoneScreenWidgetComponent;
 
-	/*  ---  Notification  ---  */
-	
-	UPROPERTY(EditDefaultsOnly)
-	UAudioComponent* AudioComponent;
+	UPROPERTY()
+	AMainCharacter* Owner;
 
-	UPROPERTY(EditDefaultsOnly)
-	USoundWave* NotificationSound;
+	UPROPERTY()
+	ABurlescaPlayerController* PlayerController;
+
+	UPROPERTY()
+	UMainCharacterAnimInstance* AnimInstance;
+	
+	UFUNCTION(BlueprintCallable)
+	void PlayNotificationSound() const { AudioComponent->Play();  }
+
+	UFUNCTION(BlueprintCallable)
+	void OnFocusPhoneTriggered();
+	
+	UFUNCTION(BlueprintCallable)
+	void OnPullPhoneTriggered();
 };

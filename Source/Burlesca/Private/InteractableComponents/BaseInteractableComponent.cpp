@@ -2,11 +2,6 @@
 
 #include "InteractableComponents/BaseInteractableComponent.h"
 
-void UTP_BaseInteractableComponent::Inject_Implementation(UDependencyContainer* container)
-{
-	
-}
-
 void UTP_BaseInteractableComponent::BeginPlay()
 {
 	Super::BeginPlay();

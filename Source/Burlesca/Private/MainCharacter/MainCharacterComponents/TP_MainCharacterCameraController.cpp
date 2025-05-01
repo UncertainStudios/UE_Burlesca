@@ -5,10 +5,7 @@
 #include "EnhancedInputComponent.h"
 #include "InputActionValue.h"
 #include "Camera/CameraComponent.h"
-#include "Framework/SignalBus.h"
 #include "MainCharacter/MainCharacter.h"
-#include "Settings/InputSettingsContainer.h"
-#include "Settings/SettingsContainer.h"
 #include "Tween/Tween.h"
 #include "TweenFunctions/TransformTweenFunctions.h"
 
@@ -16,12 +13,6 @@ void UTP_MainCharacterCameraController::Init(UCameraComponent* camera)
 {
 	MainCamera = camera;
 	cameraOffset = MainCamera->GetRelativeLocation();
-}
-
-void UTP_MainCharacterCameraController::Inject(UDependencyContainer* Container)
-{
-	SignalBus = Container->Resolve<USignalBus>();
-	InputSettingsContainer = Container->Resolve<USettingsContainer>()->GetInputSettingsContainer();
 }
 
 void UTP_MainCharacterCameraController::SetupInput(UEnhancedInputComponent* input)
@@ -50,9 +41,8 @@ void UTP_MainCharacterCameraController::LookY(const FInputActionValue& Value)
 {
 	if(bIsServiceStoped || !bIsCameraControlEnabled)
 		return;
-
-	int32 invertValue = InputSettingsContainer->bIsMouseInvertedY == false ? 1 : -1;
-	float pitch = Value.Get<float>() * InputSettingsContainer->GetMouseSensitivity() * invertValue;
+	
+	float pitch = Value.Get<float>() * 1;
 	
 	if(MainCamera->GetRelativeRotation().Pitch + pitch > topLookBound)
 		MainCamera->SetRelativeRotation(FRotator(topLookBound, 0, 0));
@@ -67,8 +57,7 @@ void UTP_MainCharacterCameraController::LookX(const FInputActionValue& Value)
 	if(bIsServiceStoped || !bIsCameraControlEnabled)
 		return;
 
-	int32 invertValue = InputSettingsContainer->bIsMouseInvertedX == false ? 1 : -1;
-	float yaw = Value.Get<float>() * InputSettingsContainer->GetMouseSensitivity() * invertValue;
+	float yaw = Value.Get<float>() * 1;
 	
 	Owner->AddActorWorldRotation(FRotator(0, yaw, 0));
 }

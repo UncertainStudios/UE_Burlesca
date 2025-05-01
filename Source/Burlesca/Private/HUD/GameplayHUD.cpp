@@ -2,14 +2,8 @@
 
 
 #include "HUD/GameplayHUD.h"
-
-#include "Framework/SignalBus.h"
 #include "HUD/InteractionView.h"
 #include "HUD/PauseMenu.h"
-
-AGameplayHUD::AGameplayHUD()
-{
-}
 
 void AGameplayHUD::InitWidgets()
 {
@@ -30,25 +24,6 @@ void AGameplayHUD::InitWidgets()
 
 	check(InteractionInfoWidget);
 	check(PauseMenuWidget);
-}
-
-void AGameplayHUD::Inject(UDependencyContainer* Container)
-{
-	SignalBus = Container->Resolve<USignalBus>();
-
-	SubscribeEvents();
-}
-
-
-
-void AGameplayHUD::SubscribeEvents()
-{
-	SignalBus->GetCharacterEventsContainer()->OnCharacterCameraReturnedToCharacter.AddDynamic(InteractionInfoWidget, &UInteractionView::ShowWidget);
-	SignalBus->GetCharacterEventsContainer()->OnCharacterCameraMovedOutFromCharacter.AddDynamic(InteractionInfoWidget, &UInteractionView::ClearWidget);
-	SignalBus->GetCharacterEventsContainer()->OnCharacterCameraMovedOutFromCharacter.AddDynamic(InteractionInfoWidget, &UInteractionView::HideWidget);
-	
-	SignalBus->GetGlobalGameEventsContainer()->OnGamePaused.AddDynamic(this, &AGameplayHUD::DisplayPauseMenu);
-	SignalBus->GetGlobalGameEventsContainer()->OnGameUnpaused.AddDynamic(this, &AGameplayHUD::HidePauseMenu);
 }
 
 void AGameplayHUD::DisplayPauseMenu()

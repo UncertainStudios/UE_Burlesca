@@ -15,7 +15,7 @@
 #include "ChatScreen.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCompanionSelected, EDialogueCompanion, companion);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNotificationRecivecedEvent, EPhoneApplication, app);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnNotificationRecivecedEvent);
 
 UCLASS(Blueprintable)
 class BURLESCA_API UChatScreen : public UPhoneApplication, public IInputSetupable

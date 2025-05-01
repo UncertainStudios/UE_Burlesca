@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Interactable.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "UObject/Object.h"
 #include "BaseInteractableComponent.generated.h"
 
@@ -13,15 +12,12 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFocusEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUnfocusEvent);
 
 UCLASS(meta = (BlueprintSpawnableComponent), ClassGroup=("Interactable|BaseInteractableComponent"), Blueprintable, BlueprintType, EditInlineNew)
-class BURLESCA_API UTP_BaseInteractableComponent : public UActorComponent, public IInteractable, public IInject
+class BURLESCA_API UTP_BaseInteractableComponent : public UActorComponent, public IInteractable
 {
 	GENERATED_BODY()
 	
 public:
 	UTP_BaseInteractableComponent() { PrimaryComponentTick.bCanEverTick = false; bWantsInitializeComponent = true; }
-	
-	UFUNCTION(BlueprintNativeEvent)
-	void Inject(UDependencyContainer* Container) override;
 	virtual void BeginPlay() override;
 	
 	UFUNCTION(BlueprintNativeEvent)

@@ -1,15 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "MobilePhone/MobilePhone.h"
-
 #include "EnhancedInputComponent.h"
 #include "Components/AudioComponent.h"
 #include "Components/WidgetComponent.h"
 #include "Core/BurlescaPlayerController.h"
-#include "Kismet/GameplayStatics.h"
 #include "MainCharacter/MainCharacter.h"
-#include "MainCharacter/MainCharacterAnimInstance.h"
+#include "MainCharacter/Animation/MainCharacterAnimInstance.h"
 #include "MobilePhone/MobilePhoneEnums.h"
 #include "MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h"
 #include "MobilePhone/ApplicationWidgets/Chat/ChatScreen.h"
@@ -40,8 +37,12 @@ void UMobilePhone::Init()
 	MobilePhoneScreenWidgetComponent->SetWidget(ApplicationsContainer);
 	ApplicationsContainer->SetVisibility(ESlateVisibility::Collapsed);
 
-	Cast<UEnhancedInputComponent>(PlayerController->InputComponent)->BindAction(FocusPhoneAction, ETriggerEvent::Triggered, this, &OnFocusPhoneTriggered);
-	Cast<UEnhancedInputComponent>(PlayerController->InputComponent)->BindAction(PullPhoneAction, ETriggerEvent::Triggered, this, &OnPullPhoneTriggered);
+	Cast<UChatScreen>(ApplicationsContainer->GetApplicationWidget(EPhoneApplication::Chat))->OnNotificationRecived.AddDynamic(this, &UMobilePhone::PlayNotificationSound);
+	if (UEnhancedInputComponent* inputConponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+	{
+		inputConponent->BindAction(FocusPhoneAction, ETriggerEvent::Triggered, this, &UMobilePhone::OnFocusPhoneTriggered);
+		inputConponent->BindAction(PullPhoneAction, ETriggerEvent::Triggered, this, &UMobilePhone::OnPullPhoneTriggered);
+	}
 }
 
 void UMobilePhone::TogglePower() const
@@ -67,6 +68,12 @@ void UMobilePhone::ToggleVisibility(bool bIsVisible) const
 {
 	StaticMesh->SetVisibility(bIsVisible);
 	MobilePhoneScreenWidgetComponent->SetVisibility(bIsVisible);
+}
+
+void UMobilePhone::PlayNotificationSound()
+{
+	AudioComponent->SetSound(NotificationSound);
+	AudioComponent->Play();
 }
 
 void UMobilePhone::OnFocusPhoneTriggered()

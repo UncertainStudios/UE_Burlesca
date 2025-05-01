@@ -2,36 +2,17 @@
 
 #include "MainCharacter/MainCharacter.h"
 
-#include "BurlescaPlayerController.h"
+#include "Core/BurlescaPlayerController.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/WidgetInteractionComponent.h"
-#include "MainCharacter/MainCharacterAnimInstance.h"
+#include "Kismet/GameplayStatics.h"
+#include "MainCharacter/Animation/MainCharacterAnimInstance.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharacterCameraController.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharMovementComponent.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.h"
 
-class ABurlescaPlayerController;
-
 AMainCharacter::AMainCharacter()
-{
-	ComponentsConstruction();
-}
-
-void AMainCharacter::Inject(UDependencyContainer* Container)
-{
-	ABurlescaPlayerController* PlayerController = Container->Resolve<ABurlescaPlayerController>();
-	PlayerController->SetViewTarget(this);
-	MainCamera->Activate();
-}
-
-void AMainCharacter::SetupInput(UEnhancedInputComponent* input)
-{	
-	input->BindAction(MousePressedInputAction, ETriggerEvent::Triggered, this, &AMainCharacter::MousePressed);
-	input->BindAction(MouseReleasedInputAction, ETriggerEvent::Triggered, this, &AMainCharacter::MouseReleased);
-}
-
-void AMainCharacter::ComponentsConstruction()
 {
 	MainCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Main Camera"));
 	MainCamera->SetupAttachment(RootComponent);
@@ -54,6 +35,23 @@ void AMainCharacter::ComponentsConstruction()
 	check(MovementComponent);
 	check(InteractionComponent);
 	check(WidgetInteraction);
+}
+
+void AMainCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	ComponentsInitialization();
+	
+	ABurlescaPlayerController* PlayerController = Cast<ABurlescaPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0));
+	PlayerController->SetViewTarget(this);
+	MainCamera->Activate();
+
+	if (UEnhancedInputComponent* inputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+	{
+		inputComponent->BindAction(MousePressedInputAction, ETriggerEvent::Triggered, this, &AMainCharacter::MousePressed);
+		inputComponent->BindAction(MouseReleasedInputAction, ETriggerEvent::Triggered, this, &AMainCharacter::MouseReleased);
+	}
 }
 
 void AMainCharacter::ComponentsInitialization()

@@ -2,7 +2,6 @@
 
 #include "CoreMinimal.h"
 #include "InputSetupable.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "UObject/Object.h"
 #include "GuitarTuningController.generated.h"
 
@@ -15,13 +14,12 @@ BURLESCA_API DECLARE_LOG_CATEGORY_EXTERN(MusicianInstruments, All, All);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGuitarSetupComplete);
 
 UCLASS()
-class BURLESCA_API UGuitarTuningController : public UObject, public IInject, public IInputSetupable
+class BURLESCA_API UGuitarTuningController : public UObject, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:
 	void Init(AGuitar* guitar);
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* InputComponent) override;
 	
 	UFUNCTION(BlueprintCallable)

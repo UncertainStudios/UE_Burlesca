@@ -12,10 +12,6 @@ void UTP_MainCharMovementComponent::Init()
 {
 }
 
-void UTP_MainCharMovementComponent::Inject(UDependencyContainer* Container)
-{
-}
-
 void UTP_MainCharMovementComponent::SetupInput(UEnhancedInputComponent* input)
 {
 	Owner = GetOwner();
@@ -29,8 +25,6 @@ void UTP_MainCharMovementComponent::SetupInput(UEnhancedInputComponent* input)
 
 	input->BindAction(RunAction, ETriggerEvent::Started, this, &UTP_MainCharMovementComponent::StartRunning);
 	input->BindAction(RunAction, ETriggerEvent::Completed, this, &UTP_MainCharMovementComponent::StopRunning);
-
-	
 }
 
 void UTP_MainCharMovementComponent::StartAcceleratingForward(const FInputActionValue& Value)

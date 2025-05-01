@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "MobilePhone/MobilePhone.h"
+#include "MobilePhone/MobilePhoneEnums.h"
 #include "PhoneApplicationContainer.generated.h"
 
 class UGuitarTunerScreen;

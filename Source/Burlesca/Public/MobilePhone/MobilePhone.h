@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/AudioComponent.h"
 #include "MobilePhone.generated.h"
 
 class UMainCharacterAnimInstance;
@@ -21,11 +20,13 @@ class BURLESCA_API UMobilePhone : public USceneComponent
 	GENERATED_BODY()
 
 public:
+	UMobilePhone();
 	void Init();
 	void TogglePower() const;
 	void TogglePower(bool bPowerOn) const;
 	void ToggleVisibility() const;
 	void ToggleVisibility(bool bIsVisible) const;
+	UPhoneApplicationContainer* GetUIView() const { return ApplicationsContainer; }
 	
 protected:
 	UPROPERTY(EditDefaultsOnly, Category="Components")
@@ -62,7 +63,7 @@ protected:
 	UMainCharacterAnimInstance* AnimInstance;
 	
 	UFUNCTION(BlueprintCallable)
-	void PlayNotificationSound() const { AudioComponent->Play();  }
+	void PlayNotificationSound();
 
 	UFUNCTION(BlueprintCallable)
 	void OnFocusPhoneTriggered();

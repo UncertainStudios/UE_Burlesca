@@ -3,16 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "GameFramework/HUD.h"
 #include "GameplayHUD.generated.h"
 
-class USignalBus;
 class UPauseMenu;
 class UInteractionView;
 
 UCLASS()
-class BURLESCA_API AGameplayHUD : public AHUD, public IInject
+class BURLESCA_API AGameplayHUD : public AHUD
 {
 protected:
 
@@ -20,9 +18,7 @@ private:
 	GENERATED_BODY()
 
 public:
-	AGameplayHUD();
 	void InitWidgets();
-	virtual void Inject(UDependencyContainer* Container) override;
 	
 	bool bIsPauseMenuVisible;
 
@@ -48,9 +44,4 @@ protected:
 
 	UPROPERTY()
 	UInteractionView* InteractionInfoWidget;
-
-	UPROPERTY()
-	USignalBus* SignalBus;
-	
-	void SubscribeEvents();
 };

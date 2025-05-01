@@ -1,11 +1,8 @@
 // Copyright Uncertain Studios (c). All Rights Reserved.
 
-
 #include "MainCharacter/MainCharacterComponents/TP_MainCharInteractionController.h"
 #include "EnhancedInputComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Framework/SignalBus.h"
-#include "InteractableComponents/BaseInteractableComponent.h"
 #include "InteractableComponents/Interactable.h"
 #include "MainCharacter/MainCharacterComponents/Interaction/InteractionCaseController.h"
 
@@ -14,20 +11,15 @@ UTP_MainCharInteractionController::UTP_MainCharInteractionController()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-void UTP_MainCharInteractionController::Inject(UDependencyContainer* Container)
-{
-	SignalBus = Container->Resolve<USignalBus>();
-}
-
 void UTP_MainCharInteractionController::Init(UCameraComponent* camera)
 {
 	Owner = Cast<AMainCharacter>(GetOwner());
+	check(Owner);
 	MainCamera = camera;
 	check(MainCamera);
 	
 	InteractionController = NewObject<UInteractionCaseController>(this);
-
-	// !!! SignalBus->GetCharacterEventsContainer()->OnCharacterCameraReturnedToCharacter.AddDynamic(this, &UTP_MainCharInteractionController::ResetCurrentInteractable);
+	InteractionController->Init();
 }
 
 void UTP_MainCharInteractionController::SetupInput(UEnhancedInputComponent* input)

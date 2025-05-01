@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "InteractionCaseController.generated.h"
 
 class UInteractionView;
@@ -12,20 +11,17 @@ class IInteractable;
 class AGameplayHUD;
 
 UCLASS()
-class BURLESCA_API UInteractionCaseController : public UObject, public IInject
+class BURLESCA_API UInteractionCaseController : public UObject
 {
 	GENERATED_BODY()
 
 public:
-	virtual void Inject(UDependencyContainer* Container) override;
-	
+	void Init();
 	void InteractableFound(IInteractable* Interactable);
 	void InteractableNotFound();
-
 	void InteractionCalled();
 
 private:
-
 	UPROPERTY()
 	UInteractionView* InteractionView;
 	

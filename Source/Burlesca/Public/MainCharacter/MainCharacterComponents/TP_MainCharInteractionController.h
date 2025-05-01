@@ -18,14 +18,13 @@ class UInputAction;
 struct FHitResult;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class BURLESCA_API UTP_MainCharInteractionController : public UMainCharacterComponent, public IInject, public IInputSetupable
+class BURLESCA_API UTP_MainCharInteractionController : public UMainCharacterComponent, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:	
 	UTP_MainCharInteractionController();
 	void Init(UCameraComponent* camera);
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* input) override;
 	
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -36,9 +35,6 @@ private:
 
 	UPROPERTY()
 	AMainCharacter* Owner;
-
-	UPROPERTY()
-	USignalBus* SignalBus;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* InteractAction;

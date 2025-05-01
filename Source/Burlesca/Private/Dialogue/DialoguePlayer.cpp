@@ -1,17 +1,8 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "Dialogue/DialoguePlayer.h"
-
 #include "Dialogue/DialogueCompanion.h"
 #include "Dialogue/DialogueSystemManager.h"
-#include "Framework/SignalBus.h"
-
-void UDialoguePlayer::Inject(UDependencyContainer* Container)
-{
-	SignalBus = Container->Resolve<USignalBus>();
-}
-
 
 void UDialoguePlayer::Init(float betweenMessageDelay)
 {

@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "InputSetupable.h"
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
@@ -17,13 +16,13 @@ class UWidgetInteractionComponent;
 class UCameraComponent;
 
 UCLASS()
-class BURLESCA_API AMainCharacter : public ACharacter, public IInputSetupable
+class BURLESCA_API AMainCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	AMainCharacter();
-	virtual void SetupInput(UEnhancedInputComponent* input) override;
+	virtual void BeginPlay() override;
 	void ComponentsInitialization();
 	
 	UFUNCTION(BlueprintCallable)
@@ -51,12 +50,13 @@ public:
 	void AttachActorToSocket(AActor* actor, FName socketName);
 
 protected:
-	void ComponentsConstruction();
-
 	void MousePressed(); 
 	void MouseReleased();
-	
+
 	UPROPERTY(EditAnywhere, Category="Components|CameraComponent")
+	UCameraComponent* MainCamera;
+	
+	UPROPERTY(EditAnywhere, Category="Components|WidgetInteractionComponent")
 	UWidgetInteractionComponent* WidgetInteraction;
 
 	UPROPERTY(EditAnywhere, Category="Components|SKMeshComponent")

@@ -1,13 +1,6 @@
 // Copyright Uncertain Studios (c). All Rights Reserved.
 
-
-#include "BurlescaGameModeBase.h"
-
-#include "EngineUtils.h"
-#include "EnhancedInputComponent.h"
-#include "InputSetupable.h"
-#include "Framework/DependencyInjection/Inject.h"
-#include "Framework/DependencyInjection/SceneContext.h"
+#include "Core/BurlescaGameModeBase.h"
 
 ABurlescaGameModeBase::ABurlescaGameModeBase()
 {
@@ -18,7 +11,7 @@ void ABurlescaGameModeBase::StartPlay()
 {
 	Super::StartPlay();
 	
-	ASceneContext* SceneContext = nullptr;
+	/*ASceneContext* SceneContext = nullptr;
 	
 	for(TActorIterator<ASceneContext> Iterator(GetWorld()); Iterator; ++Iterator)
 	{
@@ -56,5 +49,5 @@ void ABurlescaGameModeBase::StartPlay()
 				Cast<IInputSetupable>(*obj)->SetupInput(EnhancedInputComponent);
 			}
 		}
-	}
+	}*/
 }

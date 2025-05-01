@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MainCharacter/MainCharacterAnimInstance.h"
+#include "MainCharacter/Animation/MainCharacterAnimInstance.h"
 #include "MainCharacter/MainCharacter.h"
 #include "MainCharacter/MainCharacterComponents/TP_MainCharMovementComponent.h"
 

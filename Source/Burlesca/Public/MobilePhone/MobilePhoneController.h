@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MainCharacter/MainCharacterAnimInstance.h"
+#include "MainCharacter/Animation/MainCharacterAnimInstance.h"
 #include "UObject/Object.h"
 #include "MobilePhoneController.generated.h"
 

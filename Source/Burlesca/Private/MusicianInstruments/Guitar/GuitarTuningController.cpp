@@ -1,16 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #include "MusicianInstruments/Guitar/GuitarTuningController.h"
+
+#include "Kismet/GameplayStatics.h"
 #include "MainCharacter/MainCharacter.h"
 
 void UGuitarTuningController::Init(AGuitar* guitar)
 {
 	Guitar = guitar;
-}
-
-void UGuitarTuningController::Inject(UDependencyContainer* Container)
-{
-	MainCharacter = Container->Resolve<AMainCharacter>();
+	MainCharacter = Cast<AMainCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
 }
 
 void UGuitarTuningController::SetupInput(UEnhancedInputComponent* InputComponent)

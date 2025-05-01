@@ -20,8 +20,6 @@ class BURLESCA_API UDialogueSystemManager : public UGameInstanceSubsystem
 	GENERATED_BODY()
 
 public:
-	UDialogueSystemManager() {}
-	void Init(UDialoguePlayer*  dialoguePlayer);
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 
 protected:

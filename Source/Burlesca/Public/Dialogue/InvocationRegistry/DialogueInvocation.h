@@ -24,5 +24,5 @@ class BURLESCA_API IDialogueInvocation
 
 public:
 	virtual void Invoke(FDialogueInvocationParams conditionParams) = 0;
-	virtual void InitDependenciesFromDIContainer(UDependencyContainer* container) = 0;
+	virtual void Init() = 0;
 };

@@ -5,8 +5,8 @@
 
 #include "Dialogue/InvocationRegistry/DialogueInvocationParams.h"
 
-void UChangeObjectInteractionActivityStateDialogueInvocation::InitDependenciesFromDIContainer(
-	UDependencyContainer* container)
+void UChangeObjectInteractionActivityStateDialogueInvocation::Init(
+)
 {
 }
 

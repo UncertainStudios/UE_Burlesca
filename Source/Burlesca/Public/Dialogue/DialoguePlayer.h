@@ -10,7 +10,6 @@
 #include "UObject/Object.h"
 #include "DialoguePlayer.generated.h"
 
-class USignalBus;
 enum class EDialogueCompanion;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnMessageSend, EDialogueCompanion, companion, UDialogueGraphQuoteNodeInfo*, quote);
@@ -25,8 +24,6 @@ public:
 	//init
 	UDialoguePlayer() {  }
 	void Init(float betweenMessageDelay);
-	virtual void Inject(UDependencyContainer* Container) override;
-	
 	void ProvideDialoguesAssets(TArray<UDialogueGraphAsset*> dialogues) //1st - friend; 2nd - payer; 3rd - monster;
 	{
 		friendDialogue = dialogues[0];
@@ -63,9 +60,6 @@ protected:
 
 	UPROPERTY()
 	TMap<EDialogueCompanion, UDialogueGraphAsset*> companionToAssetMap;
-	
-	UPROPERTY()
-	USignalBus* SignalBus = nullptr;
 	
 	float DefaultBetweenMessageDelayTime = 1.0f;
 	

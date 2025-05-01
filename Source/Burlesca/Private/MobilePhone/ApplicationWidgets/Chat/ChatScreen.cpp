@@ -66,6 +66,7 @@ void UChatScreen::CreateChatMessageWidget(FDialogueMessage message)
 void UChatScreen::IncreaseUnreadMessagesQuantity(EDialogueCompanion companion)
 {
 	CompanionToButtonMap[companion]->IncreaseUnreadMessagesQuantity();
+	OnNotificationRecived.Broadcast();
 }
 
 void UChatScreen::ShowRequest(TArray<UDialogueGraphResponseNodeInfo*> info)

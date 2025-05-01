@@ -6,7 +6,7 @@
 #include "ConditionsRegistry/ConditionSetAsset.h"
 #include "ConditionsRegistry/Conditions/GuitarSetupCondition.h"
 #include "Dialogue/DialogueSystemManager.h"
-#include "Framework/BurlescaWorldSettings.h"
+#include "Core/BurlescaWorldSettings.h"
 
 void UConditionRegistry::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -14,14 +14,14 @@ void UConditionRegistry::Initialize(FSubsystemCollectionBase& Collection)
 
 	FConditionAssetConfig& config = Cast<ABurlescaWorldSettings>(GetWorld()->GetWorldSettings())->ConditionSetAsset->Config;
 
-	/*if(config.bEnable_HasItem)
+	/* !!! if(config.bEnable_HasItem)
 	{
 		
-	}*/
+	} !!! */
 	
-	/*UGuitarSetupCondition* guitarSetupResponseCondition = NewObject<UGuitarSetupCondition>(this);
+	/* !!! UGuitarSetupCondition* guitarSetupResponseCondition = NewObject<UGuitarSetupCondition>(this);
 	guitarSetupResponseCondition->InitDependenciesFromDIContainer(Container);
-	Conditions.Add(EConditionType::IsGuitarSetUp, guitarSetupResponseCondition);*/
+	Conditions.Add(EConditionType::IsGuitarSetUp, guitarSetupResponseCondition); !!! */
 }
 
 bool UConditionRegistry::CheckCondition(EConditionType conditionType, FConditionParams params)

@@ -5,9 +5,9 @@
 #include "HUD/InteractionView.h"
 #include "InteractableComponents/Interactable.h"
 
-void UInteractionCaseController::Inject(UDependencyContainer* Container)
+void UInteractionCaseController::Init()
 {
-	InteractionView = Container->Resolve<UInteractionView>();
+	InteractionView = Cast<AGameplayHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GetInteractionView();
 }
 
 void UInteractionCaseController::InteractableFound(IInteractable* Interactable)

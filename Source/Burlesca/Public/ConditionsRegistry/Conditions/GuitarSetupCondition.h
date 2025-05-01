@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "ConditionsRegistry/Condition.h"
-#include "Framework/DependencyInjection/DependencyContainer.h"
 #include "MusicianInstruments/Guitar/GuitarTuningController.h"
 #include "UObject/Object.h"
 #include "GuitarSetupCondition.generated.h"
@@ -19,14 +18,14 @@ class BURLESCA_API UGuitarSetupCondition : public UObject, public ICondition
 	GENERATED_BODY()
 
 public:
-	virtual void InitDependenciesFromDIContainer(UDependencyContainer* container) override
+	virtual void Init() override
 	{
-		GuitarSetupController = container->Resolve<UGuitarTuningController>();
+		/*GuitarSetupController = container->Resolve<UGuitarTuningController>();
 
 		if(GuitarSetupController == nullptr)
 		{
 			UE_LOG(LogTemp, Error, TEXT("UGuitarSetupResponseCondition::InitDependenciesFromDIContainer - GuitarSetupController is null"));
-		}
+		}*/
 	}
 	
 	virtual bool CheckCondition(FConditionParams params) override

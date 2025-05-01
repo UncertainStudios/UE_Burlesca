@@ -6,7 +6,6 @@
 #include "InputSetupable.h"
 #include "MainCharacterComponent.h"
 #include "Components/ActorComponent.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "TP_MainCharacterCameraController.generated.h"
 
 class UTween;
@@ -29,13 +28,12 @@ enum class ECameraViewMode : uint8
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class BURLESCA_API UTP_MainCharacterCameraController : public UMainCharacterComponent, public IInject, public IInputSetupable
+class BURLESCA_API UTP_MainCharacterCameraController : public UMainCharacterComponent, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:	
 	void Init(UCameraComponent* camera);
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* input) override;
 
 	UTween* MoveCameraTo(FVector targetWorldPosition, float duration);
@@ -53,12 +51,6 @@ protected:
 
 	UPROPERTY()
 	AMainCharacter* Owner;
-
-	UPROPERTY()
-	USignalBus* SignalBus;
-
-	UPROPERTY()
-	UInputSettingsContainer* InputSettingsContainer;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookXAction;

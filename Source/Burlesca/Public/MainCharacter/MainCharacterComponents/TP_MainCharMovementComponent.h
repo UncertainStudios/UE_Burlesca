@@ -6,7 +6,6 @@
 #include "InputSetupable.h"
 #include "MainCharacterComponent.h"
 #include "Components/ActorComponent.h"
-#include "Framework/DependencyInjection/Inject.h"
 #include "TP_MainCharMovementComponent.generated.h"
 
 struct FInputActionValue;
@@ -16,14 +15,13 @@ class UEnhancedInputComponent;
 class UInputAction;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class BURLESCA_API UTP_MainCharMovementComponent : public UMainCharacterComponent, public IInject, public IInputSetupable
+class BURLESCA_API UTP_MainCharMovementComponent : public UMainCharacterComponent, public IInputSetupable
 {
 	GENERATED_BODY()
 
 public:	
 	UTP_MainCharMovementComponent();
 	virtual void Init();
-	virtual void Inject(UDependencyContainer* Container) override;
 	virtual void SetupInput(UEnhancedInputComponent* input) override;
 	
 	float GetForwardMovementSpeedRelativeToMax() const { return CurrentForwardMovementSpeed / MaxCharacterMovementSpeed * 100.0f; }

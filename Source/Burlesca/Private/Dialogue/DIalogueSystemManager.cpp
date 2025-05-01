@@ -1,7 +1,11 @@
 ﻿#include "Dialogue/DialogueSystemManager.h"
 #include "Dialogue/DialoguePlayer.h"
-#include "Framework/BurlescaWorldSettings.h"
+#include "Core/BurlescaWorldSettings.h"
+#include "Kismet/GameplayStatics.h"
+#include "MainCharacter/MainCharacter.h"
 #include "MobilePhone/MobilePhone.h"
+#include "MobilePhone/MobilePhoneEnums.h"
+#include "MobilePhone/ApplicationWidgets/PhoneApplicationContainer.h"
 
 DEFINE_LOG_CATEGORY(DialogueGraphRuntime)
 
@@ -12,14 +16,12 @@ void UDialogueSystemManager::Initialize(FSubsystemCollectionBase& Collection)
 	ConditionRegistry = Collection.InitializeDependency<UConditionRegistry>();
 	DialoguePlayer = NewObject<UDialoguePlayer>(this);
 	DialoguePlayer->ProvideDialoguesAssets(Cast<ABurlescaWorldSettings>(GetWorld()->GetWorldSettings())->WorldDialogues);
-	//MobilePhone = Container->Resolve<AMobilePhone>();
-}
 
-void UDialogueSystemManager::Init(UDialoguePlayer* dialoguePlayer)
-{
-	DialoguePlayer = dialoguePlayer;
-	ChatScreen = Cast<UChatScreen>(MobilePhone->GetApp(EPhoneApplication::Chat));
-
+	AMainCharacter* MainCharacter = Cast<AMainCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
+	check(MainCharacter);
+	ChatScreen = Cast<UChatScreen>(MainCharacter->GetPhoneComponent()->GetUIView()->GetApplicationWidget(EPhoneApplication::Chat));
+	check(ChatScreen);
+	
 	FriendMessageHistory = NewObject<UMessageHistoryData>(this);
 	PayerMessageHistory = NewObject<UMessageHistoryData>(this);
 	MonsterMessageHistory = NewObject<UMessageHistoryData>(this);
@@ -40,7 +42,6 @@ void UDialogueSystemManager::HandleMessageRecieved(EDialogueCompanion companion,
 	
 	if(SelectedCompanion != companion || !ChatScreen->GetIsDialogueWindowShown())
 	{
-		MobilePhone->PlayNotificationSound();
 		ChatScreen->IncreaseUnreadMessagesQuantity(companion);
 	}
 	else

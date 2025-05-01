@@ -16,7 +16,7 @@ class BURLESCA_API UChangeObjectInteractionActivityStateDialogueInvocation : pub
 	GENERATED_BODY()
 
 public:
-	virtual void InitDependenciesFromDIContainer(UDependencyContainer* container) override;
+	virtual void Init() override;
 	virtual void Invoke(FDialogueInvocationParams conditionParams) override;
 
 protected:

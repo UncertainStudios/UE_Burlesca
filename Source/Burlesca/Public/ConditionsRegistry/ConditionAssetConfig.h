@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ConditionAssetConfig.generated.h"
 
 USTRUCT(BlueprintType)
 struct FConditionAssetConfig

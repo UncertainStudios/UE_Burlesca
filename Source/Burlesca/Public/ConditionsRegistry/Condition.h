@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "ConditionParams.h"
-#include "Framework/DependencyInjection/DependencyContainer.h"
 #include "UObject/Interface.h"
 #include "Condition.generated.h"
 
@@ -20,5 +19,5 @@ class BURLESCA_API ICondition
 
 public:
 	virtual bool CheckCondition(FConditionParams conditionParams) = 0;
-	virtual void InitDependenciesFromDIContainer(UDependencyContainer* container) = 0;
+	virtual void Init() = 0;
 };

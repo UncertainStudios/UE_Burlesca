@@ -8,11 +8,13 @@
 #include "Dialogue/InvocationRegistry/DialogueInvocationType.h"
 #include "Dialogue/InvocationRegistry/Invocations/ChangeObjectInteractionActivityStateDialogueInvocation.h"
 
-void UDialogueInvocationRegistry::Inject(UDependencyContainer* Container)
+void UDialogueInvocationRegistry::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
+
 	UChangeObjectInteractionActivityStateDialogueInvocation* changeObjectActivityStateInvocation =
 		NewObject<UChangeObjectInteractionActivityStateDialogueInvocation>(this);
-	changeObjectActivityStateInvocation->InitDependenciesFromDIContainer(Container);
+	changeObjectActivityStateInvocation->Init();
 	Invocations.Add(EDialogueInvocationType::ChangeObjectInteractionActivityState, changeObjectActivityStateInvocation);
 }
 

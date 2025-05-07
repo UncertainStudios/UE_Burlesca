@@ -1,8 +1,8 @@
-"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp"
-/FI"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Definitions.h"
-/Fo"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp.obj"
-/sourceDependencies "C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp.dep.json"
-@"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\RiderLink.Shared.rsp"
+"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp"
+/FI"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Definitions.h"
+/Fo"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp.obj"
+/sourceDependencies "C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\Module.RiderLink.cpp.dep.json"
+@"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RiderLink\RiderLink.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

@@ -1,8 +1,8 @@
-"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler\SimpleScheduler.cpp"
-/FI"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\Definitions.h"
-/Fo"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SimpleScheduler.cpp.obj"
-/sourceDependencies "C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SimpleScheduler.cpp.dep.json"
-@"C:\UEProjects\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\RD.Shared.rsp"
+"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Source\RD\src\rd_framework_cpp\src\main\scheduler\SimpleScheduler.cpp"
+/FI"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\Definitions.h"
+/Fo"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SimpleScheduler.cpp.obj"
+/sourceDependencies "C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\SimpleScheduler.cpp.dep.json"
+@"C:\Practice_UE\UE_Burlesca\Plugins\Developer\RiderLink\Intermediate\Build\Win64\x64\UnrealEditor\Development\RD\RD.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

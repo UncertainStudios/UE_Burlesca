@@ -1,11 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.cpp",
+        "Source": "c:\\practice_ue\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\rd\\definitions.h",
-            "c:\\ueprojects\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.h"
+            "c:\\practice_ue\\ue_burlesca\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\rd\\definitions.h",
+            "c:\\practice_ue\\ue_burlesca\\plugins\\developer\\riderlink\\source\\rd\\src\\rd_gen_cpp\\src\\rdtextbuffer.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
